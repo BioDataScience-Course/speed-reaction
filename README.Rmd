@@ -1,0 +1,47 @@
+---
+title: "Vitesse de réaction chimique"
+output: github_document
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE)
+SciViews::R
+```
+
+## Contexte
+
+```{r}
+speed <- read("data/reaction.rds")
+```
+
+Des scientifiques ont déterminé la vitesse d'une réaction chimique en fonction de la concentration en substrat. Le jeu de données mis à votre disposition est détaillé ci-dessous.
+
+```{r}
+skimr::skim(speed)
+```
+
+Les scientifiques ont réalisé le graphique ci-dessous qui sera la base de votre recherche. Les scientifiques ont besoin de vous afin de réaliser une régression non linéaire.
+
+```{r}
+chart(speed, speed ~ conc) +
+  geom_point()
+```
+
+## Objectif
+
+Dans le cadre de cet exercice, vous devez réaliser un document au format Rmd pour analyser la situation mise à votre disposition sous la forme d'un carnet de laboratoire. 
+
+Afin de cadrer votre recherche, tentez de réaliser une régression non linéaire qui suit l'équation proposée par Michaelis-Menten dont l'équation est la suivante :
+
+La courbe de Michaelis-Menten est bien connue pour modéliser des cinétiques chimiques simples, enzymatiques en particulier. Son équation est\ :
+
+$$V = \frac{V_{max} * conc}{K + conc}$$
+
+où $conc$ est la concentration des réactifs au début de la réaction, c'est-à-dire, en absence de produits de cette réaction en mol/L, $V$ est la vitesse de réaction en mol/min. Le modèle a deux paramètres $V_{max}$ la vitesse maximale asymptotique en mol/min et $K$ en mol/L correspondant à la concentration telle que la vitesse est la moitié de $V_{max}$. 
+
+Votre carnet de laboratoire doit débuter par une introduction sur l'équation de Michaelis-Menten. Ensuite, vous devez décrire la suite des opérations que vous allez réaliser 
+
+
+
+
+
